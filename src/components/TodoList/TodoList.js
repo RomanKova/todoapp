@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import TodoListItem from '../TodoListItem';
 
-const TodoList = () => {
-    const list = ["Drink Coffe", "Learn React", "Go to shop"]
+const TodoList = ({ list }) => {
+
     //const [inputValue, setInputValue] = useState("")
 
     const renderTodoList = () => {
