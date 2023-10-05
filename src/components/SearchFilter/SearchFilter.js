@@ -8,9 +8,9 @@ const SearchFilter = () => {
         <input type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} placeholder="type to search" />
         <button>Add</button>
     <hr />
-        <button className="active">All </button>
-        <button>Active </button>
-        <button>Done</button>
+        <button className="filter-button active">All </button>
+        <button className="filter-button">Active </button>
+        <button className="filter-button">Done</button>
     <hr />
       </div>
 
