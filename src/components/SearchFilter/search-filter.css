@@ -15,7 +15,7 @@
     box-shadow: inset 1px 1px 10px -4px rgba(000,000,000, 0.5);
 }
 
-.active {
+.active-button {
     background-color: #2ba9ff !important;
     color: #fff !important;
 }
