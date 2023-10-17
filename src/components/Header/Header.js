@@ -12,7 +12,9 @@ const Header = () => {
   return (
 
     <div className="Header">
-      <span style={{ fontFamily: 'sans-serif' }}><span style={{ fontSize: 30 }}><b>Todo List</b></span> {tobedone} more to do</span>
+      <span style={{ fontFamily: 'sans-serif' }}>
+      <span style={{ fontSize: 30 }}>
+      <b>Todo List</b></span> {tobedone} more to do</span>
      
     </div>
 

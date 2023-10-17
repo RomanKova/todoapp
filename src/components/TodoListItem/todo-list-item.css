@@ -1,6 +1,6 @@
 .Task div {
 
-   
+
     /*border-width: 1px;
     border-style: solid;*/
     border: 1px solid #000;
@@ -12,6 +12,10 @@
 .Task span button {
 
     margin-bottom: 9px;
-    
-    vertical-align:middle;
+
+    vertical-align: middle;
+}
+
+.done {
+    text-decoration: line-through;
 }

@@ -1,14 +1,22 @@
 import React from 'react'
 import TodoListItem from '../TodoListItem';
 
-const TodoList = ({ list }) => {
+const TodoList = ({ list, onDeleteItem, onDoneItem }) => {
 
     //const [inputValue, setInputValue] = useState("")
 
     const renderTodoList = () => {
         const content = list.map((element, index) => {
+            const { name, done } = element
+           
             return (
-                <TodoListItem name={element} id={index} />
+                <TodoListItem
+                    name={name}
+                    done={done}
+                    id={index}
+                    onDeleteItem={onDeleteItem}
+                    onDoneItem={onDoneItem}
+                />
             )
         })
 
