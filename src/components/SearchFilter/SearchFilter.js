@@ -11,7 +11,7 @@ const SearchFilter = (props) => {
     setInputValue("");
   }
   return (
-    <div>
+    <div className="search-filter">
       <input type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} placeholder="type to search" />
       <button className="filter-button" onClick={() => inputValue.length === 0 ? {} : saveListItem(inputValue)}>Add</button>
       <hr />
