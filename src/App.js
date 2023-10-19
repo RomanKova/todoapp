@@ -6,29 +6,31 @@ import TodoList from './components/TodoList';
 
 const App = () => {
   // const list = ["Drink Coffe", "Learn React", "Go to shop"]
-  const list = [
-    {
-      name: "Drink Coffe",
-      done: true
-    },
-    {
-      name: "Learn React",
-      done: true
-    },
-    {
-      name: "Go to shop",
-      done: false,
+
+  const createItem = (name, done = false, active = false) => {
+    return {
+      name: name,
+      done: done,
+      active: active
     }
+    //return { name, done, active } это равнозначные записи
+  }
+
+  const listByDefault = [
+    createItem("Drink Coffe"),
+    createItem("Learn React", true),
+    createItem("Go to shop",),
   ]
 
-  const [activeButton, setActiveButton] = useState("active")
-  const [listItems, setListItems] = useState(list)
+
+  const [activeButton, setActiveButton] = useState("all")
+  const [listItems, setListItems] = useState(listByDefault)
 
 
   const onSaveListItem = (text) => {
     const newListItems = [
       ...listItems,
-      text
+      createItem(text),
     ]
 
     setListItems(newListItems)
@@ -56,18 +58,40 @@ const App = () => {
     setListItems(newListItem)
 
   }
-  console.log("listItems", listItems)
+
+  const filteredItems = () => {
+    let items
+
+    switch (activeButton) {
+      case "done":
+        items = listItems.filter(el => el.done)
+        break;
+
+      // case "active":
+      //   break;
+
+      default:
+        items = listItems // all
+        break;
+    }
+
+    return items
+  }
+
+  const doneItems = listItems.filter(el => el.done).length
+  const list = filteredItems()
+  //const allDoneItems = listItems.filter( el => el.done ).length
   return (
 
     <div className="App" >
-      <Header />
+      <Header totalItems={listItems.length} doneItems={doneItems} />
       <SearchFilter
         setActiveButton={setActiveButton}
         activeButton={activeButton}
         onSaveListItem={onSaveListItem}
       />
       <TodoList
-        list={listItems}
+        list={list}
         onDeleteItem={onDeleteItem}
         onDoneItem={onDoneItem}
       />

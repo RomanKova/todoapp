@@ -1,20 +1,14 @@
 import React, { useState } from 'react'
 
-const Header = () => {
-  // const [count, setCount] = useState(0)
-  // const [inputValue, setInputValue] = useState("")
-
-  // var search;
-
-
-  var tobedone = 1;
+const Header = (props) => {
+  const { totalItems, doneItems } = props
 
   return (
 
     <div className="Header">
       <span style={{ fontFamily: 'sans-serif' }}>
       <span style={{ fontSize: 30 }}>
-      <b>Todo List</b></span> {tobedone} more to do</span>
+      <b>Todo List</b></span> {doneItems} out of  {totalItems}</span>
      
     </div>
 

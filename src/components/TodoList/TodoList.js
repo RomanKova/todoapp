@@ -15,6 +15,7 @@ const TodoList = ({ list, onDeleteItem, onDoneItem }) => {
                     name={name}
                     done={done}
                     id={index}
+                    key={index}
                     onDeleteItem={onDeleteItem}
                     onDoneItem={onDoneItem}
                 />
