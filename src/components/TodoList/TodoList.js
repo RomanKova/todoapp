@@ -1,5 +1,6 @@
 import React from 'react'
 import TodoListItem from '../TodoListItem';
+import "./styles.css"
 
 const TodoList = ({ list, onDeleteItem, onDoneItem }) => {
 
