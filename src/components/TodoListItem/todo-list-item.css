@@ -1,21 +1,52 @@
-.Task div {
-
-
-    /*border-width: 1px;
-    border-style: solid;*/
-    border: 1px solid #000;
-    width: 310px;
+.task {
+    width: 550px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
 }
-
-
-
-.Task span button {
-
-    margin-bottom: 9px;
-
-    vertical-align: middle;
+.list-item-name {
+    font-size: 30px;
+    font-family: "sans-serif";
+}
+.task span button {
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    color: #fff;
 }
 
 .done {
     text-decoration: line-through;
+}
+
+.action-buttons button:active {
+    box-shadow: inset 1px 1px 3px 2px rgba(000, 000, 000, 0.5);
+    border: 1px solid #000;
+}
+.action-buttons svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+.action-buttons {
+    display: flex;
+    align-items: center;
+}
+.delete-btn {
+    background-color: #9b0000;
+}
+.delete-btn svg {
+    background-color: #ff0000;
+    border-radius: 100%;
+}
+.delete-btn svg path,
+.active-btn svg path {
+    fill: #fff;
+}
+.done-btn {
+    background-color: #006002;
+}
+.active-btn {
+    background-color: #085578;
 }

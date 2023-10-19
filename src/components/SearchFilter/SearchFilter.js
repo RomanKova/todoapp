@@ -13,7 +13,7 @@ const SearchFilter = (props) => {
   return (
     <div>
       <input type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} placeholder="type to search" />
-      <button onClick={() => inputValue.length === 0 ? {} : saveListItem(inputValue)}>Add</button>
+      <button className="filter-button" onClick={() => inputValue.length === 0 ? {} : saveListItem(inputValue)}>Add</button>
       <hr />
       <button onClick={() => setActiveButton("all")} className={`filter-button ${activeButton === 'all' && 'active-button'}`}>All </button>
       <button onClick={() => setActiveButton("active")} className={`filter-button ${activeButton === 'active' && 'active-button'}`}>Active </button>
