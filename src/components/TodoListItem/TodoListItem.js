@@ -7,13 +7,14 @@ import './todo-list-item.css';
 
 const TodoListItem = (props) => {
 
-  const { name, id, done, onDeleteItem, onDoneItem } = props
-
+  const { name, id, done, active, onDeleteItem, onDoneItem, onActiveItem } = props
+  console.log(active);
+  console.log(done);
   return (
 
     <div className="task" key={id}>
 
-      <span style={{ fontSize: 30, fontFamily: 'sans-serif', paddingRight: 30 }}>
+      <span style={{ fontSize: 30, fontFamily: 'sans-serif', paddingRight: 30, color:`${active ? 'red' : 'black'}` }}>
         <b className={`${done ? 'done' : ""}`}>{name}</b>
       </span>
 
@@ -26,7 +27,7 @@ const TodoListItem = (props) => {
           <DoneIcon />
           Done
         </button>
-        <button className="filter-button active-btn" >
+        <button className="filter-button active-btn" onClick={() => onActiveItem(id)}>
           <ActiveIcon />
           Active
         </button>

@@ -18,7 +18,7 @@ const App = () => {
 
   const listByDefault = [
     createItem("Drink Coffe"),
-    createItem("Learn React", true),
+    createItem("Learn React"),
     createItem("Go to shop",),
   ]
 
@@ -59,6 +59,21 @@ const App = () => {
 
   }
 
+  const onActiveItem = (id) => {
+
+    const oldItem = listItems[id];
+    const newItem = { ...oldItem, active: !oldItem.active };
+
+    const activeListItem = [
+      ...listItems.slice(0, id),
+      newItem,
+      ...listItems.slice(id + 1)
+    ]
+
+    setListItems(activeListItem)
+
+  }
+
   const filteredItems = () => {
     let items
 
@@ -67,8 +82,9 @@ const App = () => {
         items = listItems.filter(el => el.done)
         break;
 
-      // case "active":
-      //   break;
+      case "active":
+      items = listItems.filter(el => el.active)
+      break;
 
       default:
         items = listItems // all
@@ -79,6 +95,8 @@ const App = () => {
   }
 
   const doneItems = listItems.filter(el => el.done).length
+  const activeItems = listItems.filter(el => el.active).length
+
   const list = filteredItems()
   //const allDoneItems = listItems.filter( el => el.done ).length
   return (
@@ -94,6 +112,7 @@ const App = () => {
         list={list}
         onDeleteItem={onDeleteItem}
         onDoneItem={onDoneItem}
+        onActiveItem={onActiveItem}
       />
     </div>
 
